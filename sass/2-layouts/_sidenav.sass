@@ -1,0 +1,41 @@
+@use '../1-base/variables'
+
+.sidenav
+  max-width: 150px
+  margin: 0 auto
+  padding: 20px
+
+  align-self: start
+
+  ul
+    li
+      a
+        background-color: variables.$white
+
+        img
+          padding: 15px 20px
+          box-shadow: variables.$box-shadow
+          border-radius: 5px
+
+          &:hover
+            box-shadow: variables.$box-shadow-hover
+
+    li + li
+            margin-top: 20px
+
+@media (max-width: 680px)
+  .sidenav
+    margin: 0
+    max-width: none
+
+    overflow-x: auto
+
+    ul
+      display: flex
+      gap: 20px
+
+      li
+        flex: 1 0 120px
+
+      li + li
+        margin: 0

@@ -1,0 +1,65 @@
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+  font-family: 'Roboto', sans-serif
+
+html
+  font-size: 62.5%
+
+body
+  font-size: 1.6rem
+  min-height: 100vh
+
+ul
+  list-style: none
+
+a
+  text-decoration: none
+  color: inherit
+
+img
+  max-width: 100%
+  height: auto
+  display: block
+  object-fit: cover
+  object-position: center
+
+button
+  border: none
+  background: transparent
+
+.col-wide
+  grid-column: 1 / -1
+
+.row-2
+  grid-row: span 2
+
+.wrapper
+  display: grid
+  grid-template-columns: minmax(160px, 1fr) 3fr 300px
+  grid-template-areas: "header header header" "sidenav content aside" "footer footer footer"
+
+  .header
+    grid-area: header
+
+  .sidenav
+    grid-area: sidenav
+
+  .content
+    grid-area: content
+
+  .aside
+    grid-area: aside
+
+  .footer
+    grid-area: footer
+
+@media (max-width: 960px)
+  .wrapper
+    grid-template-areas: "header header header" "sidenav content content" "sidenav aside aside" "footer footer footer"
+
+@media (max-width: 680px)
+  .wrapper
+    grid-template-columns: 1fr
+    grid-template-areas: "header" "sidenav" "content" "aside" "footer"

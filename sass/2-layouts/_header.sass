@@ -1,0 +1,51 @@
+@use '../1-base/variables'
+
+.header
+  display: grid
+  grid-template-columns: 1fr auto
+  gap: 20px
+  align-items: center
+
+  padding: 3rem
+
+  background: variables.$linear
+
+  .logo
+    padding: 20px
+
+  .menu
+    ul
+      display: flex
+      align-items: center
+      gap: 5px
+
+      li
+        padding: 8px 12px
+        border: 1px solid variables.$red
+        border-radius: 5px
+
+        transition: .3s linear
+
+        &:hover
+          border: 1px solid transparent
+          background-color: variables.$white
+
+          a
+            color: variables.$orange
+            box-shadow: 1px 1px 3px variables.$white
+
+        a
+          color: variables.$white
+          font-family: variables.$inter
+          font-weight: 600
+
+          padding-block: 3px
+
+@media (max-width: 768px)
+  .header
+    grid-template-columns: auto
+    justify-content: center
+
+    .logo
+      display: flex
+      justify-content: center
